@@ -54,17 +54,8 @@ def hash_table_get(ht, key):
         current_node = current_node.next
 
     return None
-    
+
 def hash_table_print(ht):
-    """
-    Prints the contents of the hash table.
-
-    Args:
-    - ht: The hash table to print.
-
-    Returns:
-    - None
-    """
     if ht is None:
         return
 
@@ -76,6 +67,12 @@ def hash_table_print(ht):
             head = head.next
         print("None")
 
+def hash_table_clear(ht):
+    if ht is None:
+        return
+
+    for i in range(len(ht.array)):
+        ht.array[i] = None
 
 def main():
     size = int(input("Enter the size of the hash table: "))
@@ -85,8 +82,9 @@ def main():
         print("\nMenu:")
         print("1. Add element to hash table")
         print("2. Get value by key")
-        print("3. View hash table")
-        print("4. Exit")
+        print("3. Print hash table")
+        print("4. Clear hash table")
+        print("5. Exit")
         choice = input("Enter your choice: ")
 
         if choice == "1":
@@ -105,14 +103,11 @@ def main():
             else:
                 print("Key not found.")
         elif choice == "3":
-            print("\nHash Table:")
-            for i, head in enumerate(ht.array):
-                print(f"Bucket {i}: ", end="")
-                while head:
-                    print(f"[{head.key}: {head.value}] -> ", end="")
-                    head = head.next
-                print("None")
+            hash_table_print(ht)
         elif choice == "4":
+            hash_table_clear(ht)
+            print("Hash table cleared.")
+        elif choice == "5":
             print("Exiting...")
             break
         else:
