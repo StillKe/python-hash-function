@@ -41,6 +41,47 @@ index = key_index("example_key", 10)
 print(f"The index for key 'example_key' is {index}")
 This will calculate the index for the key "example_key" in an array of size 10 using the djb2 hash function.
 
+# Hash Table Implementation in Python
+
+This repository contains a Python implementation of a hash table data structure, along with basic operations such as adding elements and viewing the hash table.
+
+## Description
+
+A hash table is a data structure that stores key-value pairs. It uses a hash function to compute an index into an array of buckets or slots, from which the desired value can be found.
+
+The implementation provided here includes the following components:
+
+- **HashNode Class**: Represents a node in the hash table, containing a key-value pair and a reference to the next node in case of collision.
+- **HashTable Class**: Represents the hash table itself, containing an array of buckets and methods for adding elements and viewing the table.
+- **Hashing Functions**: Includes the `hash_djb2` function for computing hash values and the `key_index` function for determining the index for a given key.
+- **Main Program**: Provides an interactive menu for users to add elements to the hash table, view the contents of the table, and exit the program.
+
+## Usage
+
+1. **Clone the Repository**:
+git clone <repository-url>
+
+markdown
+Copy code
+
+2. **Navigate to the Directory**:
+cd hash-table-python
+
+markdown
+Copy code
+
+3. **Run the Program**:
+python hash_table.py
+
+markdown
+Copy code
+
+4. **Follow the Prompts**:
+- Enter the size of the hash table.
+- Choose an option from the menu:
+  - Add element to hash table
+  - View hash table
+  - Exit
 ## Contributions
 Contributions to this repository are welcome! If you have any suggestions for improvements or new features, feel free to open an issue or submit a pull request.
 
